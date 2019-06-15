@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "========npm install no ta-gui========"
 cd gui/ta-gui/
 rm -rf node_modules/

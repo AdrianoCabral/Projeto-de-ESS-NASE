@@ -7,11 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AtividadeEmCampoComponent } from './atividadeCampo/atividadeEmCampo.component';
 import { AtividadeEmCampoService } from './atividadeCampo/atividadeEmCampo.service';
+import { AlunosComponent} from './alunos/alunos.component'
+import { AlunoService } from './alunos/aluno.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    AtividadeEmCampoComponent
+    AtividadeEmCampoComponent,
+    AlunosComponent
   ],
   imports: [
     BrowserModule,
@@ -19,12 +22,16 @@ import { AtividadeEmCampoService } from './atividadeCampo/atividadeEmCampo.servi
     HttpModule, 
     RouterModule.forRoot([
       {
-        path: 'atividadeEmCampo',
+        path: 'atividadeEmCampo', 
         component: AtividadeEmCampoComponent
+      },
+      {
+        path: 'aluno',
+        component: AlunosComponent
       }
     ])
   ],
-  providers: [AtividadeEmCampoService],
+  providers: [AtividadeEmCampoService, AlunoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
