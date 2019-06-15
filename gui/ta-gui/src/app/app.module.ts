@@ -7,14 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AtividadeEmCampoComponent } from './atividadeCampo/atividadeEmCampo.component';
 import { AtividadeEmCampoService } from './atividadeCampo/atividadeEmCampo.service';
-import { AlunosComponent} from './alunos/alunos.component'
-import { AlunoService } from './alunos/aluno.service'
+import { RelatoriosComponent} from './relatorios/relatorios.component'
+import { RelatorioService } from './relatorios/relatorio.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     AtividadeEmCampoComponent,
-    AlunosComponent
+    RelatoriosComponent
   ],
   imports: [
     BrowserModule,
@@ -27,11 +27,11 @@ import { AlunoService } from './alunos/aluno.service'
       },
       {
         path: 'aluno',
-        component: AlunosComponent
+        component: RelatoriosComponent
       }
     ])
   ],
-  providers: [AtividadeEmCampoService, AlunoService],
+  providers: [AtividadeEmCampoService, RelatorioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

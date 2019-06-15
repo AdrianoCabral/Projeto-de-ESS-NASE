@@ -1,0 +1,77 @@
+<html (mousemove)="onMove()">
+
+<table>
+<tr>
+   <td><label>Nome </label></td>
+   <td><input [(ngModel)]="profissional.profissional_nome" name="namebox"></td>
+   <td *ngIf="nomeDuplicado">
+     Já existe um relatorio desse Profissional
+   </td>
+   <td *ngIf="nomeNaoCadastrado">
+      Não existe um relatorio com desse Profissional
+   </td>
+   <td><button (click)="criarProfissional(profissional)">Adicionar</button></td>
+</tr>
+<tr>
+   <td><label>Especialidade </label></td>
+   <td><input [(ngModel)]="profissional.especialidade" name="cpfbox"></td>
+   
+</tr>
+<tr>
+   <td><label>Ultima Atualização </label></td>
+   <td><input [(ngModel)]="relatorio.lastAtt" ></td>
+</tr>
+<tr>
+        <td><label>Curso mais popular </label></td>
+        <td><input [(ngModel)]="relatorio.popular" ></td>
+</tr>
+<tr>
+   <td><label>Consultas do curso mais popular </label></td>
+   <td><input [(ngModel)]="relatorio.popular_vezes" ></td>
+</tr>
+<tr>
+   <td><label>Número de atendimentos </label></td>
+   <td><input [(ngModel)]="relatorio.atendimentos" ></td>
+</tr>
+<tr>
+   <td><label>Número de Faltas </label></td>
+   <td><input [(ngModel)]="relatorio.faltas" ></td>
+</tr>
+<tr>
+   <td><label>Clientes Homens </label></td>
+   <td><input [(ngModel)]="relatorio.M" ></td>
+</tr>
+<tr>
+   <td><label>Clientes Mulheres </label></td>
+   <td><input [(ngModel)]="relatorio.F" ></td>
+</tr>
+
+</table>
+
+<table>
+<tr *ngIf="relatorios.length > 0">
+   <th>profissional_nome</th>
+   <th>especialidade</th>
+   <th>lastAtt</th>
+   <th>popular</th>
+   <th>popular_vezes</th>
+   <th>atendimentos</th>
+   <th>faltas</th>
+   <th>M</th>
+   <th>F</th>
+</tr>
+<tr *ngFor="let a of relatorios">
+   <td name="nomelist">{{a.profissional_nome}}</td>
+   <td>{{a.especialidade}}</td>
+   <td>{{a.lastAtt}}</td>
+   <td>{{a.popular}}</td>
+   <td>{{a.popular_vezes}}</td>
+   <td>{{a.atendimentos}}</td>
+   <td>{{a.faltas}}</td>
+   <td>{{a.M}}</td>
+   <td>{{a.F}}</td>
+   <td><button (click)="removerrelatorio(a)">Remover</button></td>
+</tr>
+</table>
+
+</html>

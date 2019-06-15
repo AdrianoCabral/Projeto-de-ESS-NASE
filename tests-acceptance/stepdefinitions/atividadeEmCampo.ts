@@ -15,7 +15,7 @@ let pAND = ((p,q) => p.then(a => q.then(b => a && b)))
 
 defineSupportCode(function ({ Given, When, Then }) {
 
-    //1° Scenario: Registro de Atividade em campo, sem os dados dos alunos que compareceram
+    //1° Scenario: Registro de Atividade em campo, sem os dados dos relatorios que compareceram
 
     Given(/^estou na página de registro de atividade em campo$/, async () => {
         await browser.get("http://localhost:4200/");

@@ -3,7 +3,7 @@ Feature: As a professional
          I want to register field activity
 So that I can verify then record
 
-Scenario: Registro de Atividade em campo, sem os dados dos alunos que compareceram
+Scenario: Registro de Atividade em campo, sem os dados dos relatorios que compareceram
 Given estou na página de registro de atividade em campo
 Given vejo a seções vazias de atividade, profissional, participantes, local, data inicial, data final
 When preencho com a atividade "Acolhimento", profissional "Lucas Mendonça", local "CEU", data inicial "31/12/19", data final "31/12/19"

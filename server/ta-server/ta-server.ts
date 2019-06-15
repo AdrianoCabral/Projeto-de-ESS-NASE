@@ -3,13 +3,13 @@ import bodyParser = require("body-parser");
 
 import { AtividadeEmCampo } from '../../gui/ta-gui/src/app/atividadeCampo/atividadeEmCampo';
 import {CadastroDeAtividades} from './cadastrodeatividades';
-import {Aluno} from '../../gui/ta-gui/src/app/alunos/aluno';
-import {CadastroDeAlunos} from './cadastrodealunos';
+import {relatorio} from '../../gui/ta-gui/src/app/relatorios/relatorio';
+import {CadastroDerelatorios} from './cadastroderelatorios';
 
 var app = express();
 
 var cadastroAtividade: CadastroDeAtividades = new CadastroDeAtividades();
-var cadastroAluno: CadastroDeAlunos = new CadastroDeAlunos();
+var cadastrorelatorio: CadastroDerelatorios = new CadastroDerelatorios();
 var allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -63,38 +63,38 @@ app.delete('/atividade',function(req: express.Request, res: express.Response){
   }
 });
 
-app.get('/alunos', function (req, res) {
-  res.send(JSON.stringify(cadastroAluno.getAlunos()));
+app.get('/relatorios', function (req, res) {
+  res.send(JSON.stringify(cadastrorelatorio.getrelatorios()));
 })
 
-app.post('/aluno', function (req: express.Request, res: express.Response) {
-  var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
-  aluno = cadastroAluno.criar(aluno);
-  if (aluno) {
-    res.send({"success": "O aluno foi cadastrado com sucesso"});
+app.post('/relatorio', function (req: express.Request, res: express.Response) {
+  var relatorio: relatorio = <relatorio> req.body; //verificar se é mesmo relatorio!
+  relatorio = cadastrorelatorio.criar(relatorio);
+  if (relatorio) {
+    res.send({"success": "O relatorio foi cadastrado com sucesso"});
   } else {
-    res.send({"failure": "O aluno não pode ser cadastrado"});
+    res.send({"failure": "O relatorio não pode ser cadastrado"});
   }
 })
 
-app.put('/aluno', function (req: express.Request, res: express.Response) {
-  var aluno: Aluno = <Aluno> req.body;
-  aluno = cadastroAluno.atualizar(aluno);
-  if (aluno) {
-    res.send({"success": "O aluno foi atualizado com sucesso"});
+app.put('/relatorio', function (req: express.Request, res: express.Response) {
+  var relatorio: relatorio = <relatorio> req.body;
+  relatorio = cadastrorelatorio.atualizar(relatorio);
+  if (relatorio) {
+    res.send({"success": "O relatorio foi atualizado com sucesso"});
   } else {
-    res.send({"failure": "O aluno não pode ser atualizado"});
+    res.send({"failure": "O relatorio não pode ser atualizado"});
   }
 })
 
 
-app.put('/alunoDelete', function (req: express.Request, res: express.Response) {
-  var aluno: Aluno = <Aluno> req.body;
-  aluno = cadastroAluno.remover(aluno);
-  if (aluno) {
-    res.send({"success": "O aluno foi deletado com sucesso"});
+app.put('/relatorioDelete', function (req: express.Request, res: express.Response) {
+  var relatorio: relatorio = <relatorio> req.body;
+  relatorio = cadastrorelatorio.remover(relatorio);
+  if (relatorio) {
+    res.send({"success": "O relatorio foi deletado com sucesso"});
   } else {
-    res.send({"failure": "O aluno não pode ser deletado"});
+    res.send({"failure": "O relatorio não pode ser deletado"});
   }
 });
 
