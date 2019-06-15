@@ -10,13 +10,13 @@
        <th>Testes</th>
     </tr>
     <tr *ngFor="let a of relatorios">
-       <td>{{a.nome}}</td>
-       <td>{{a.cpf}}</td>
-       <td>{{a.email}}</td>
-       <td>{{a.githubLogin}}</td>
-       <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarrelatorio(a)"></td>
-       <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarrelatorio(a)"></td>
-       <td class="meta"><input [(ngModel)]="a.metas['gerDeProjetos']" (change)="atualizarrelatorio(a)"></td>
-       <td class="meta"><input [(ngModel)]="a.metas['Testes']" (change)="atualizarrelatorio(a)"></td>
-    </tr>
+      <td>{{a.nome}}</td>
+      <td>{{a.cpf}}</td>
+      <td>{{a.email}}</td>
+      <td>{{a.githubLogin}}</td>
+      <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['gerDeProjetos']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['Testes']" (change)="atualizarrelatorio(a)"></td>
+   </tr>
     </table>

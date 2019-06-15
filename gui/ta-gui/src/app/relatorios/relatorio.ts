@@ -5,12 +5,12 @@ export class Relatorio {
   especialidade: string;
   lastAtt: string;
   popular: string;
-  popular_vezes: number;
-  atendimentos: number;
-  faltas: number;
-  demanda: Map<string, number>;
-  M: number;
-  F: number;
+  popular_vezes: string;
+  atendimentos: string;
+  faltas: string;
+  demanda: Map<string, string>;
+  M: string;
+  F: string;
 
   constructor() {
     this.clean();
@@ -21,18 +21,18 @@ export class Relatorio {
     this.especialidade = "";
     this.lastAtt = "";
     this.popular = "";
-    this.popular_vezes = 0;
-    this.atendimentos = 0;
-    this.faltas = 0;
-    this.demanda = new Map<string, number>();
-    this.M = 0;
-    this.F = 0;
+    this.popular_vezes = "";
+    this.atendimentos = "";
+    this.faltas = "";
+    this.demanda = new Map<string, string>();
+    this.M = "";
+    this.F = "";
     
   }
 
   clone(): Relatorio {
     var relatorio: Relatorio = new Relatorio();
-    relatorio.demanda = new Map<string,number>();
+    relatorio.demanda = new Map<string,string>();
     relatorio.copyFrom(this);
     return relatorio;
   }
@@ -47,13 +47,13 @@ export class Relatorio {
     this.popular_vezes = from.popular_vezes;
     this.M = from.M;
     this.F = from.F;
-    this.demanda = new Map<string, number>();
+    this.demanda = new Map<string, string>();
     this.copyDemandaFrom(from.demanda);
     
   }
 
-  copyDemandaFrom(from: Map<string,number>): void {
-    this.demanda = new Map<string,number>();
+  copyDemandaFrom(from: Map<string,string>): void {
+    this.demanda = new Map<string,string>();
     for (let key in from) {
       this.demanda[key] = from[key];
     }

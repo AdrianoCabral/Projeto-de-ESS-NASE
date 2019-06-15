@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { relatorio } from './relatorio';
-import { relatorioService } from './relatorio.service';
+import { Relatorio } from './relatorio';
+import { RelatorioService } from './relatorio.service';
 
 @Component({
   selector: 'metas',
@@ -10,11 +10,11 @@ import { relatorioService } from './relatorio.service';
   styleUrls: ['./metas.component.css']
 })
 export class MetasComponent implements OnInit {
-   constructor(private relatorioService: relatorioService) {}
+   constructor(private relatorioService: RelatorioService) {}
 
-   relatorios: relatorio[];
+   relatorios: Relatorio[];
 
-   atualizarrelatorio(relatorio: relatorio): void {
+   atualizarrelatorio(relatorio: Relatorio): void {
       this.relatorioService.atualizar(relatorio)
       .catch(erro => alert(erro));
    }

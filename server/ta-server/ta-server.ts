@@ -3,13 +3,13 @@ import bodyParser = require("body-parser");
 
 import { AtividadeEmCampo } from '../../gui/ta-gui/src/app/atividadeCampo/atividadeEmCampo';
 import {CadastroDeAtividades} from './cadastrodeatividades';
-import {relatorio} from '../../gui/ta-gui/src/app/relatorios/relatorio';
-import {CadastroDerelatorios} from './cadastroderelatorios';
+import {Relatorio} from '../../gui/ta-gui/src/app/relatorios/relatorio';
+import {CadastroDeRelatorios} from './cadastroderelatorios';
 
 var app = express();
 
 var cadastroAtividade: CadastroDeAtividades = new CadastroDeAtividades();
-var cadastrorelatorio: CadastroDerelatorios = new CadastroDerelatorios();
+var cadastroRelatorio: CadastroDeRelatorios = new CadastroDeRelatorios();
 var allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -64,12 +64,12 @@ app.delete('/atividade',function(req: express.Request, res: express.Response){
 });
 
 app.get('/relatorios', function (req, res) {
-  res.send(JSON.stringify(cadastrorelatorio.getrelatorios()));
+  res.send(JSON.stringify(cadastroRelatorio.getrelatorios()));
 })
 
 app.post('/relatorio', function (req: express.Request, res: express.Response) {
-  var relatorio: relatorio = <relatorio> req.body; //verificar se é mesmo relatorio!
-  relatorio = cadastrorelatorio.criar(relatorio);
+  var relatorio: Relatorio = <Relatorio> req.body; //verificar se é mesmo relatorio!
+  relatorio = cadastroRelatorio.criar(relatorio);
   if (relatorio) {
     res.send({"success": "O relatorio foi cadastrado com sucesso"});
   } else {
@@ -78,8 +78,8 @@ app.post('/relatorio', function (req: express.Request, res: express.Response) {
 })
 
 app.put('/relatorio', function (req: express.Request, res: express.Response) {
-  var relatorio: relatorio = <relatorio> req.body;
-  relatorio = cadastrorelatorio.atualizar(relatorio);
+  var relatorio: Relatorio = <Relatorio> req.body;
+  relatorio = cadastroRelatorio.atualizar(relatorio);
   if (relatorio) {
     res.send({"success": "O relatorio foi atualizado com sucesso"});
   } else {
@@ -89,8 +89,8 @@ app.put('/relatorio', function (req: express.Request, res: express.Response) {
 
 
 app.put('/relatorioDelete', function (req: express.Request, res: express.Response) {
-  var relatorio: relatorio = <relatorio> req.body;
-  relatorio = cadastrorelatorio.remover(relatorio);
+  var relatorio: Relatorio = <Relatorio> req.body;
+  relatorio = cadastroRelatorio.remover(relatorio);
   if (relatorio) {
     res.send({"success": "O relatorio foi deletado com sucesso"});
   } else {

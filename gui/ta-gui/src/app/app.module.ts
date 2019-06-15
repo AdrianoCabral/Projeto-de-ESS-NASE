@@ -26,7 +26,7 @@ import { RelatorioService } from './relatorios/relatorio.service'
         component: AtividadeEmCampoComponent
       },
       {
-        path: 'aluno',
+        path: 'relatorios',
         component: RelatoriosComponent
       }
     ])

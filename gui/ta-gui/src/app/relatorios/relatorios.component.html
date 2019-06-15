@@ -3,18 +3,18 @@
 <table>
 <tr>
    <td><label>Nome </label></td>
-   <td><input [(ngModel)]="profissional.profissional_nome" name="namebox"></td>
+   <td><input [(ngModel)]="relatorio.profissional_nome" name="namebox"></td>
    <td *ngIf="nomeDuplicado">
      Já existe um relatorio desse Profissional
    </td>
    <td *ngIf="nomeNaoCadastrado">
-      Não existe um relatorio com desse Profissional
+      Não existe um relatorio com esse Profissional
    </td>
-   <td><button (click)="criarProfissional(profissional)">Adicionar</button></td>
+   <td><button (click)="criarrelatorio(relatorio)">Adicionar</button></td>
 </tr>
 <tr>
    <td><label>Especialidade </label></td>
-   <td><input [(ngModel)]="profissional.especialidade" name="cpfbox"></td>
+   <td><input [(ngModel)]="relatorio.especialidade"></td>
    
 </tr>
 <tr>
