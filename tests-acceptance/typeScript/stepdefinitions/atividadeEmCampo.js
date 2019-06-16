@@ -20,7 +20,7 @@ let sameProfissional = ((elem, profissional) => elem.element(protractor_1.by.nam
 let sameName = ((elem, name) => elem.element(protractor_1.by.name('nomelist')).getText().then(text => text === name));
 let pAND = ((p, q) => p.then(a => q.then(b => a && b)));
 cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
-    //1° Scenario: Registro de Atividade em campo, sem os dados dos alunos que compareceram
+    //1° Scenario: Registro de Atividade em campo, sem os dados dos relatorios que compareceram
     Given(/^estou na página de registro de atividade em campo$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.browser.get("http://localhost:4200/");
         yield expect(protractor_1.browser.getTitle()).to.eventually.equal('TaGui');

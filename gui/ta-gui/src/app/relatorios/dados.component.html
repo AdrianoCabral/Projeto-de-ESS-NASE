@@ -6,6 +6,7 @@
        <th>Curso mais Popular</th>
        <th>Atendimentos do Curso mais popular</th>
        <th>Atendimentos</th>
+       <th>Faltas</th>
        <th>relatorios Homens</th>
        <th>Alunas Mulheres</th>
        <th>Curso1</th>
@@ -14,19 +15,20 @@
        <th>Curso4</th>
        <th>Curso5</th>
     </tr>
-    <tr *ngFor="let a of relatorios">
-      <td>{{a.profissional_nome}}</td>
-      <td>{{a.especialidade}}</td>
+    <tr *ngFor="let a of relatorios" name="relatoriolist">
+      <td name="namelist">{{a.profissional_nome}}</td>
+      <td name="especialidadelist">{{a.especialidade}}</td>
       <td class="meta"><input [(ngModel)]="a.lastAtt" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.popular" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.popular_vezes" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.atendimentos" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.M" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.F" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.demanda['curso1']" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.metas['curso2']" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.metas['curso3']" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.metas['curso4']" (change)="atualizarrelatorio(a)"></td>
-      <td class="meta"><input [(ngModel)]="a.metas['curso5']" (change)="atualizarrelatorio(a)"></td>
+      <td name="popularlist" class="meta"><input [(ngModel)]="a.popular" (change)="atualizarrelatorio(a)" name="popularbox"></td>
+      <td name="popular_vezeslist"class="meta"><input [(ngModel)]="a.popular_vezes" (change)="atualizarrelatorio(a)" name="popular_vezesbox"></td>
+      <td name="atendimentoslist"class="meta"><input [(ngModel)]="a.atendimentos" (change)="atualizarrelatorio(a)" name="atendimentosbox"></td>
+      <td name="faltaslist"class="meta"><input [(ngModel)]="a.faltas" (change)="atualizarrelatorio(a)" name="faltasbox"></td>
+      <td name="malelist"class="meta"><input [(ngModel)]="a.M" (change)="atualizarrelatorio(a)" name="malebox"></td>
+      <td name="femalelist"class="meta"><input [(ngModel)]="a.F" (change)="atualizarrelatorio(a)" name="femalebox"></td>
+      <td name="c1list"class="meta"><input [(ngModel)]="a.demanda['curso1']" (change)="atualizarrelatorio(a)" name="c1box"></td>
+      <td name="c2list"class="meta"><input [(ngModel)]="a.metas['curso2']" (change)="atualizarrelatorio(a)" name="c2box"></td>
+      <td name="c3list"class="meta"><input [(ngModel)]="a.metas['curso3']" (change)="atualizarrelatorio(a)" name="c3box"></td>
+      <td name="c4list"class="meta"><input [(ngModel)]="a.metas['curso4']" (change)="atualizarrelatorio(a)" name="c4box"></td>
+      <td name="c5list"class="meta"><input [(ngModel)]="a.metas['curso5']" (change)="atualizarrelatorio(a)" name="c5box"></td>
    </tr>
     </table>
