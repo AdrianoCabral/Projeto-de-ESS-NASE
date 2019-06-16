@@ -9,11 +9,13 @@ import { AtividadeEmCampoComponent } from './atividadeCampo/atividadeEmCampo.com
 import { AtividadeEmCampoService } from './atividadeCampo/atividadeEmCampo.service';
 import { RelatoriosComponent} from './relatorios/relatorios.component'
 import { RelatorioService } from './relatorios/relatorio.service'
+import { DadosComponent } from './relatorios/dados.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AtividadeEmCampoComponent,
+    DadosComponent,
     RelatoriosComponent
   ],
   imports: [
@@ -28,7 +30,11 @@ import { RelatorioService } from './relatorios/relatorio.service'
       {
         path: 'relatorios',
         component: RelatoriosComponent
-      }
+      },
+      {
+        path: 'dados',
+        component: DadosComponent
+      },
     ])
   ],
   providers: [AtividadeEmCampoService, RelatorioService],

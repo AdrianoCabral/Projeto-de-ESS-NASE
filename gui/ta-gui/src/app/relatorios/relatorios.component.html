@@ -17,34 +17,6 @@
    <td><input [(ngModel)]="relatorio.especialidade"></td>
    
 </tr>
-<tr>
-   <td><label>Ultima Atualização </label></td>
-   <td><input [(ngModel)]="relatorio.lastAtt" ></td>
-</tr>
-<tr>
-        <td><label>Curso mais popular </label></td>
-        <td><input [(ngModel)]="relatorio.popular" ></td>
-</tr>
-<tr>
-   <td><label>Consultas do curso mais popular </label></td>
-   <td><input [(ngModel)]="relatorio.popular_vezes" ></td>
-</tr>
-<tr>
-   <td><label>Número de atendimentos </label></td>
-   <td><input [(ngModel)]="relatorio.atendimentos" ></td>
-</tr>
-<tr>
-   <td><label>Número de Faltas </label></td>
-   <td><input [(ngModel)]="relatorio.faltas" ></td>
-</tr>
-<tr>
-   <td><label>Clientes Homens </label></td>
-   <td><input [(ngModel)]="relatorio.M" ></td>
-</tr>
-<tr>
-   <td><label>Clientes Mulheres </label></td>
-   <td><input [(ngModel)]="relatorio.F" ></td>
-</tr>
 
 </table>
 
@@ -52,25 +24,12 @@
 <tr *ngIf="relatorios.length > 0">
    <th>profissional_nome</th>
    <th>especialidade</th>
-   <th>lastAtt</th>
-   <th>popular</th>
-   <th>popular_vezes</th>
-   <th>atendimentos</th>
-   <th>faltas</th>
-   <th>M</th>
-   <th>F</th>
 </tr>
 <tr *ngFor="let a of relatorios">
-   <td name="nomelist">{{a.profissional_nome}}</td>
-   <td>{{a.especialidade}}</td>
-   <td>{{a.lastAtt}}</td>
-   <td>{{a.popular}}</td>
-   <td>{{a.popular_vezes}}</td>
-   <td>{{a.atendimentos}}</td>
-   <td>{{a.faltas}}</td>
-   <td>{{a.M}}</td>
-   <td>{{a.F}}</td>
+   <td name="namelist">{{a.profissional_nome}}</td>
+   <td name="especialidadelist">{{a.especialidade}}</td>
    <td><button (click)="removerrelatorio(a)">Remover</button></td>
+   <a name="dados" routerLink="/dados">Visualizar</a>
 </tr>
 </table>
 

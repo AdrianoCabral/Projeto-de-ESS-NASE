@@ -5,11 +5,11 @@ import { Relatorio } from './relatorio';
 import { RelatorioService } from './relatorio.service';
 
 @Component({
-  selector: 'metas',
-  templateUrl: './metas.component.html',
-  styleUrls: ['./metas.component.css']
+  selector: 'dados',
+  templateUrl: './dados.component.html',
+  styleUrls: ['./dados.component.css']
 })
-export class MetasComponent implements OnInit {
+export class DadosComponent implements OnInit {
    constructor(private relatorioService: RelatorioService) {}
 
    relatorios: Relatorio[];

@@ -1,0 +1,32 @@
+<table>
+    <tr>
+       <th>Nome</th>
+       <th>Especialidade</th>
+       <th>Ultima Atualização</th>
+       <th>Curso mais Popular</th>
+       <th>Atendimentos do Curso mais popular</th>
+       <th>Atendimentos</th>
+       <th>relatorios Homens</th>
+       <th>Alunas Mulheres</th>
+       <th>Curso1</th>
+       <th>Curso2</th>
+       <th>Curso3</th>
+       <th>Curso4</th>
+       <th>Curso5</th>
+    </tr>
+    <tr *ngFor="let a of relatorios">
+      <td>{{a.profissional_nome}}</td>
+      <td>{{a.especialidade}}</td>
+      <td class="meta"><input [(ngModel)]="a.lastAtt" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.popular" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.popular_vezes" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.atendimentos" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.M" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.F" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.demanda['curso1']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['curso2']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['curso3']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['curso4']" (change)="atualizarrelatorio(a)"></td>
+      <td class="meta"><input [(ngModel)]="a.metas['curso5']" (change)="atualizarrelatorio(a)"></td>
+   </tr>
+    </table>
