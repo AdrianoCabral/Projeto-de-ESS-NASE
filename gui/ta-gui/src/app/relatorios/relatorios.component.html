@@ -14,7 +14,7 @@
 </tr>
 <tr>
    <td><label>Especialidade </label></td>
-   <td><input [(ngModel)]="relatorio.especialidade"></td>
+   <td><input [(ngModel)]="relatorio.especialidade" name="especialidadebox"></td>
    
 </tr>
 
@@ -25,10 +25,11 @@
    <th>profissional_nome</th>
    <th>especialidade</th>
 </tr>
-<tr *ngFor="let a of relatorios">
+<tr *ngFor="let a of relatorios" name="profissionallist">
    <td name="namelist">{{a.profissional_nome}}</td>
    <td name="especialidadelist">{{a.especialidade}}</td>
    <td><button (click)="removerrelatorio(a)">Remover</button></td>
+   <td name="checklist"><input type="checkbox"></td>
    <a name="dados" routerLink="/dados">Visualizar</a>
 </tr>
 </table>
